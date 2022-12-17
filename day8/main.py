@@ -56,10 +56,12 @@ def day8_2():
                 current_row = result[i]
                 pos_tree = result[i][j]
                 current_colums = [result[c][j] for c in range(cols)]
-                count_left_row = count_tree_visible(pos_tree,  current_row[j + 1 :])
-                count_right_row = count_tree_visible(pos_tree,  current_row[:j][::-1])
+                count_left_row = count_tree_visible(pos_tree, current_row[j + 1 :])
+                count_right_row = count_tree_visible(pos_tree, current_row[:j][::-1])
                 count_top_colums = count_tree_visible(pos_tree, current_colums[i + 1 :])
-                count_down_colums = count_tree_visible(pos_tree, current_colums[:i][::-1])
+                count_down_colums = count_tree_visible(
+                    pos_tree, current_colums[:i][::-1]
+                )
                 total = (
                     count_left_row
                     * count_right_row
